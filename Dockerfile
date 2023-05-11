@@ -1,7 +1,8 @@
 FROM node:lts-alpine
-ENV NODE_ENV production
 WORKDIR /usr/src/app
-COPY --chown=node:node . /usr/src/app
-RUN npm ci --only=production
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 8080
 USER 10014
-CMD "npm" "start"
+CMD [ "npm", "start" ]
