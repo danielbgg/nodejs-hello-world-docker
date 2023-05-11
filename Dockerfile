@@ -1,5 +1,7 @@
 FROM node:carbon
 
+USER 10014
+
 # Create app directory
 WORKDIR /usr/src/app
 
