@@ -1,7 +1,5 @@
 FROM node:carbon
 
-USER 10014
-
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -18,4 +16,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
+
+USER 10014
+
 CMD [ "npm", "start" ]
